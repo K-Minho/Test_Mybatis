@@ -49,7 +49,8 @@
                         <tr>
                             <th>유저 이름</th>
                             <td>
-                                <input type="text" name="username" placeholder="Enter username" required><br />
+                                <input type="text" name="username" value="${remember}" placeholder="Enter username"
+                                    required><br />
                             </td>
                         </tr>
                         <tr>
@@ -63,6 +64,8 @@
                     <button type="submit">로그인</button>
                 </form>
             </div>
-
-
+            <br>
+            <div class="box">
+                사용가능한 Id : Keter, Hokhmah, Binah <br> 비밀번호 : 1234
+            </div>
             <%@ include file="../layout/footer.jsp" %>
