@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="shop.mtcoding.test_spring.model.BoardRepository">
+   <select id="findAll" resultType="shop.mtcoding.test_spring.model.Board">
+      select * from board_tb order by desc
+   </select>
+   
+   <select id="findByuserId" resultType="shop.mtcoding.test_spring.model.Board">
+      select * from board_tb where userId = #{userId} order by desc
+   </select>
+
+   <insert id="insert">
+      insert into board_tb(title, userId, created_at) values(#{title}, #{userId}, now())
+   </insert>
+
+   <delete id="deleteById">
+      delete from board_tb where id = #{id}
+   </delete>
+
+   <update id="updateById">
+      update board_tb 
+      set title = #{title}
+      where id = #{id}
+   </update>
+
+</mapper>

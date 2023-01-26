@@ -9,8 +9,17 @@ insert into user_tb(username, password, email, created_at) values('Hod', '1234',
 insert into user_tb(username, password, email, created_at) values('Yesod', '1234', 'Yesod@email.com', now());
 insert into user_tb(username, password, email, created_at) values('Malkuth', '1234', 'Malkuth@email.com', now());
 
-insert into board_tb(title, userId, created_at) values("First", 1, now());
-insert into board_tb(title, userId, created_at) values("Second", 1, now());
-insert into board_tb(title, userId, created_at) values("Third", 1, now());
-insert into board_tb(title, userId, created_at) values("Fourth", 1, now());
-insert into board_tb(title, userId, created_at) values("Fifth", 1, now());
+insert into board_tb(title, userId, created_at) values('Keter_First', 1, now());
+insert into board_tb(title, userId, created_at) values('Keter_Second', 1, now());
+insert into board_tb(title, userId, created_at) values('Keter_Third', 1, now());
+insert into board_tb(title, userId, created_at) values('Keter_Fourth', 1, now());
+insert into board_tb(title, userId, created_at) values('Keter_Fifth', 1, now());
+
+insert into board_tb(title, userId, created_at) values('Hokhmah_First', 2, now());
+insert into board_tb(title, userId, created_at) values('Hokhmah_Second', 2, now());
+insert into board_tb(title, userId, created_at) values('Hokhmah_Third', 2, now());
+
+insert into board_tb(title, userId, created_at) values('Binah_First', 3, now());
+insert into board_tb(title, userId, created_at) values('Binah_Second', 3, now());
+insert into board_tb(title, userId, created_at) values('Binah_Third', 3, now());
+insert into board_tb(title, userId, created_at) values('Binah_Fourth', 3, now());
