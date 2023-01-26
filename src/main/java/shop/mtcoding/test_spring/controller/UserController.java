@@ -31,11 +31,11 @@ public class UserController {
     public String update(String username, String password, String email) {
         User principal = (User) session.getAttribute("principal");
         if (principal == null) {
-            return "error";
+            return "error/errorpage";
         }
         int result = userRepository.updateById(principal.getId(), username, password, email);
         if (result != 1) {
-            return "error";
+            return "error/errorpage";
         }
         return "redirect:/list";
     }
@@ -43,7 +43,7 @@ public class UserController {
     @GetMapping("/logout")
     public String logout() {
         session.invalidate();
-        return "redirect:/";
+        return "redirect:/loginForm";
     }
 
     @GetMapping("/loginForm")

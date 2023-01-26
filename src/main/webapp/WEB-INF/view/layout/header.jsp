@@ -8,31 +8,16 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>TestPage</title>
+            <style>
+                .box {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .color {
+                    background-color: gray;
+                }
+            </style>
         </head>
 
         <body>
-            <%-- <c:choose>
-                <c:when="${}">
-
-                    </c:when>
-
-                    <c:otherwise>
-
-                    </c:otherwise>
-                    </c:choose> --%>
-
-                    <hr>
-                    <ul>
-                        <c:choose>
-                            <c:when test="${principal == null}">
-                                <a href="/loginForm">로그인</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="/joinForm">회원가입</a>
-                            </c:when>
-
-                            <c:otherwise>
-                                <a href="/purchase">회원정보</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="/logout">로그아웃</a>
-                            </c:otherwise>
-                        </c:choose>
-
-                    </ul>
