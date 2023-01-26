@@ -25,6 +25,9 @@ public class BoardController {
     @GetMapping("/list")
     public String List(Model model) {
         User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/loginForm";
+        }
         List<Board> boardList = boardRepository.findByuserId(principal.getId());
         model.addAttribute("boardList", boardList);
         return "board/list";

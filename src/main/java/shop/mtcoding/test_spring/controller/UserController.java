@@ -107,7 +107,12 @@ public class UserController {
 
     @GetMapping(value = "/")
     public String mainhome() {
-        return "user/main";
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/joinForm";
+        } else {
+            return "redirect:/list";
+        }
     }
 
 }
