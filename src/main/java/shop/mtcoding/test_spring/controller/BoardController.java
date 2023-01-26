@@ -22,7 +22,7 @@ public class BoardController {
     @Autowired
     private HttpSession session;
 
-    @GetMapping("/board/list")
+    @GetMapping("/list")
     public String List(Model model) {
         User principal = (User) session.getAttribute("principal");
         List<Board> boardList = boardRepository.findByuserId(principal.getId());

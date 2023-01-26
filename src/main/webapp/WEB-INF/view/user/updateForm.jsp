@@ -11,7 +11,7 @@
         </head>
 
         <body>
-<h1>게시글 목록 페이지</h1>
+        <h1>회원정보 수정 페이지</h1>
             <hr>
             <ul>
                 <c:choose>
@@ -28,21 +28,29 @@
 
             </ul>
 
-            <table border="1">
-                <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>등록일</th>
-                </tr>
-                <c:forEach items="${boardList}" var="board">
+            <form action="/update" method="post">
+                <table border="1">
                     <tr>
-                        <td>${board.id}</td>
-                        <td><a href="/board/${board.id}">${board.title}</a></td>
-                        <td>${board.createdAtToString}</td>
+                        <th>유저 이름</th>
+                        <td>
+                            <input type="text" name="username" placeholder="Enter username" required><br />
+                        </td>
                     </tr>
-                </c:forEach>
-                <a href="/board/insert">글쓰기</a>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td>
+                            <input type="password" name="password" placeholder="Enter password" required><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td>
+                            <input type="email" name="email" placeholder="Enter email" required><br />
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit">회원수정 완료</button>
+            </form>
 
 
-            </table>
             <%@ include file="../layout/footer.jsp" %>

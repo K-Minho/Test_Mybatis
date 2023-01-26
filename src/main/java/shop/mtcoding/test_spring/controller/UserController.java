@@ -22,6 +22,24 @@ public class UserController {
     @Autowired
     private HttpSession session;
 
+    @GetMapping("/updateForm")
+    public String updateForm() {
+        return "user/updateForm";
+    }
+
+    @PostMapping(value = "/update")
+    public String update(String username, String password, String email) {
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "error";
+        }
+        int result = userRepository.updateById(principal.getId(), username, password, email);
+        if (result != 1) {
+            return "error";
+        }
+        return "redirect:/list";
+    }
+
     @GetMapping("/logout")
     public String logout() {
         session.invalidate();
@@ -68,11 +86,11 @@ public class UserController {
                 response.addCookie(cookie);
             }
             session.setAttribute("principal", user); // principal 인증주체
-            return "redirect:/board/list";
+            return "redirect:/list";
         }
     }
 
-    @GetMapping({ "/", "/joinForm" })
+    @GetMapping("/joinForm")
     public String joinForm() {
         return "user/joinForm";
     }
@@ -85,6 +103,11 @@ public class UserController {
         } else {
             return "redirect:/joinForm";
         }
+    }
+
+    @GetMapping(value = "/")
+    public String mainhome() {
+        return "user/main";
     }
 
 }

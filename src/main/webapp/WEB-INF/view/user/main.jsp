@@ -11,7 +11,7 @@
         </head>
 
         <body>
-<h1>게시글 목록 페이지</h1>
+        <h1>임시 메인 빈 페이지</h1>
             <hr>
             <ul>
                 <c:choose>
@@ -28,21 +28,4 @@
 
             </ul>
 
-            <table border="1">
-                <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>등록일</th>
-                </tr>
-                <c:forEach items="${boardList}" var="board">
-                    <tr>
-                        <td>${board.id}</td>
-                        <td><a href="/board/${board.id}">${board.title}</a></td>
-                        <td>${board.createdAtToString}</td>
-                    </tr>
-                </c:forEach>
-                <a href="/board/insert">글쓰기</a>
-
-
-            </table>
             <%@ include file="../layout/footer.jsp" %>
